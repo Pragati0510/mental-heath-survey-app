@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14' # Adjust the version as needed
+          node-version: '14'
 
       - name: Install dependencies
         run: npm install
@@ -23,3 +23,8 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Deploy the built files to a branch
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./public # Replace this with your build directory
