@@ -9,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install rsync
-        run: sudo apt-get install rsync  # For Ubuntu/Debian-based systems
       - name: Checkout code
         uses: actions/checkout@v2
 
