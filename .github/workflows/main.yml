@@ -23,8 +23,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      # Deploy the built files to a branch
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          publish_dir: ./public # Replace this with your build directory
+          branch: gh-pages
+          folder: public
