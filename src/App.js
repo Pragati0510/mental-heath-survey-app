@@ -32,7 +32,7 @@ function App() {
               <p className="intro-paragraph">
                 Mental health is an important aspect of overall well-being. It's essential to
                 raise awareness and promote a positive understanding of mental illnesses.
-                Learn more about mental health and take our survey to assess your mental state.
+                Learn more about mental health and take our survey to assess mental state.
                 <img src={mentalHealthImage} alt="Mental Health" className={`mental-health-image ${introVisible ? 'show' : ''}`} />
               </p>
             </section>
