@@ -1,24 +1,21 @@
-name: CI/CD for React App
-
 on:
   push:
     branches:
-      - mybranch # Change this to your main branch name
+      - mybranch
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-   
+
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Adjust the Node.js version as needed
-      - name: remove cache
-        run: npm cache clean --force
+          node-version: '14' # Adjust the version as needed
 
       - name: Install dependencies
         run: npm install
@@ -27,7 +24,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+        uses: JamesIves/github-pages-deploy-action@4.2.0
         with:
           branch: gh-pages
           folder: public
